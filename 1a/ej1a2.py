@@ -42,10 +42,17 @@ Exemple:
 '''
 
 def sum_odd_numbers(list_numbers):
-    for n in list_numbers:
-        if not isinstance(n, int) or isinstance(n, bool) or n < 0:
-            raise ValueError("La lista debe contener solo números enteros mayores o iguales a 0")
-    return sum(n for n in list_numbers if n % 2 != 0)
+    suma = 0
+
+    for num in list_numbers:
+        if not isinstance(num, int) or num < 0:
+            raise ValueError("valor no valido en la lista")
+
+        resto = num % 2
+        if resto != 0:
+            suma = suma + num
+
+    return suma
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
