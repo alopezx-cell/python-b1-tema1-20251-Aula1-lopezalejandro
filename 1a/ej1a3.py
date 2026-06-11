@@ -32,8 +32,15 @@ Exemple:
 '''
 
 def invert_text(text_chain:str):
-    # Write here your code
-    pass
+    letras = list(text_chain)
+    texto_final = ""
+    pos = len(letras) - 1
+
+    while pos >= 0:
+        texto_final = texto_final + letras[pos]
+        pos = pos - 1
+
+    return texto_final
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
