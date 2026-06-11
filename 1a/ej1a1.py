@@ -40,17 +40,30 @@ Exemple:
 '''
 
 def fibonacci(fibonacci_number):
-    if not isinstance(fibonacci_number, (int, float)) or isinstance(fibonacci_number, bool):
-        raise ValueError("El parámetro debe ser un número entero")
+
+    if not isinstance(fibonacci_number, (int, float)):
+        raise ValueError("el parametro tiene que ser un numero")
+
     if fibonacci_number < 0:
-        raise ValueError("El parámetro debe ser mayor o igual a cero")
-    n = int(fibonacci_number)
-    if n == 0:
-        return 0
-    a, b = 0, 1
-    for _ in range(n - 1):
-        a, b = b, a + b
-    return b
+        raise ValueError("el numero no puede ser negativo")
+
+    n1 = 0
+    n2 = 1
+
+    if fibonacci_number == 0:
+        return n1
+    if fibonacci_number == 1:
+        return n2
+
+    resultado = 0
+    i = 2
+    while i <= fibonacci_number:
+        resultado = n1 + n2
+        n1 = n2
+        n2 = resultado
+        i = i + 1
+
+    return resultado
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
