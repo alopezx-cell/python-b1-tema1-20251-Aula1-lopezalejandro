@@ -42,9 +42,11 @@ Exemple:
 '''
 
 def sum_odd_numbers(list_numbers):
-    # Write here your code
-    pass
+    for n in list_numbers:
+        if not isinstance(n, int) or isinstance(n, bool) or n < 0:
+            raise ValueError("La lista debe contener solo números enteros mayores o iguales a 0")
+    return sum(n for n in list_numbers if n % 2 != 0)
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(sum_odd_numbers([1, 2, 3, 4, 5, 10, 21, 100]))
+#print(sum_odd_numbers([1, 2, 3, 4, 5, 10, 21, 100]))
